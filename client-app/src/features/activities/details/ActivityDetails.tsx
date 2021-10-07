@@ -13,7 +13,7 @@ function ActivityDetails() {
 
     const { activityStore } = useStore();
     const { selectedActivity: activity, loadActivity, loadingInitial } = activityStore;
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
 
     useEffect(() => {
         if (id) loadActivity(id);
@@ -28,8 +28,8 @@ function ActivityDetails() {
                 <ActivityDetailedInfo activity={activity} />
                 <ActivityDetailedChat />
             </Grid.Column>
-            <Grid.Column  width={6}>
-                <ActivityDetailedSidebar />
+            <Grid.Column width={6}>
+                <ActivityDetailedSidebar activity={activity} />
             </Grid.Column>
         </Grid>
     )
