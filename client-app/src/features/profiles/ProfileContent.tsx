@@ -2,8 +2,9 @@ import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Tab } from 'semantic-ui-react';
 import { Profile } from '../../app/models/profile';
-import ProfilePhotos from './ProfilePhotos';
 import ProfileAbout from './ProfileAbout';
+import ProfilePhotos from './ProfilePhotos';
+import ProfileActivities from './ProfileActivities';
 import ProfileFollowings from './ProfileFollowings';
 import { useStore } from '../../app/stores/store';
 
@@ -17,7 +18,7 @@ function ProfileContent({ profile }: Props) {
     const panes = [
         { menuItem: 'About', render: () => <ProfileAbout /> },
         { menuItem: 'Photos', render: () => <ProfilePhotos profile={profile} /> },
-        { menuItem: 'Events', render: () => <Tab.Pane>Events content</Tab.Pane> },
+        { menuItem: 'Events', render: () => <ProfileActivities /> },
         { menuItem: 'Followers', render: () => <ProfileFollowings /> },
         { menuItem: 'Following', render: () => <ProfileFollowings /> },
     ];
