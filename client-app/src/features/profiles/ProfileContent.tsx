@@ -1,5 +1,4 @@
 import { observer } from 'mobx-react-lite';
-import React from 'react';
 import { Tab } from 'semantic-ui-react';
 import { Profile } from '../../app/models/profile';
 import ProfileAbout from './ProfileAbout';

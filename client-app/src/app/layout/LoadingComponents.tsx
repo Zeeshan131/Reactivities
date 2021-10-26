@@ -5,10 +5,10 @@ interface Props {
     content?: string;
 }
 
-function LoadingComponents({inverted = true, content='Loading...'}: Props) {
+function LoadingComponents({ inverted = true, content = 'Loading...' }: Props) {
     return (
         <Dimmer active={true} inverted={inverted}>
-            <Loader content = {content} />
+            <Loader content={content} />
         </Dimmer>
     )
 }

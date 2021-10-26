@@ -6,11 +6,11 @@ import LoadingComponents from '../../../app/layout/LoadingComponents';
 import { useStore } from '../../../app/stores/store';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import {v4 as uuid} from 'uuid';
+import { v4 as uuid } from 'uuid';
 import MyTextInput from '../../../app/common/form/MyTextInput';
 import MyTextArea from '../../../app/common/form/MyTextArea';
 import MySelectInput from '../../../app/common/form/MySelectInput';
-import {categoryOptions} from '../../../app/common/options/categoryOptions';
+import { categoryOptions } from '../../../app/common/options/categoryOptions';
 import MyDateInput from '../../../app/common/form/MyDateInput';
 import { ActivityFormValues } from '../../../app/models/activity';
 
@@ -44,8 +44,7 @@ function ActivityForm() {
             };
             createActivity(newActivity).then(() => history.push(`/activities/${newActivity.id}`));
         }
-        else 
-        {
+        else {
             updateActivity(activity).then(() => history.push(`/activities/${activity.id}`))
         }
     }
@@ -69,11 +68,11 @@ function ActivityForm() {
                         <MyTextInput name='title' placeholder='Title' />
                         <MyTextArea rows={3} placeholder='Description' name='description' />
                         <MySelectInput options={categoryOptions} placeholder='Category' name='category' />
-                        <MyDateInput 
-                            placeholderText='Date' 
-                            name='date' 
-                            showTimeSelect 
-                            timeCaption='time' 
+                        <MyDateInput
+                            placeholderText='Date'
+                            name='date'
+                            showTimeSelect
+                            timeCaption='time'
                             dateFormat='MMMM d, yyyy h:mm aa'
                         />
                         <Header content='Location Details' sub color='teal' />

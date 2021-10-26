@@ -1,13 +1,13 @@
 import { useField } from 'formik';
 import { Form, Label } from 'semantic-ui-react';
-import DatePicker, {ReactDatePickerProps} from 'react-datepicker';
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
 
 function MyDateInput(props: Partial<ReactDatePickerProps>) {
     const [field, meta, helpers] = useField(props.name!);
 
     return (
         <Form.Field error={meta.touched && !!meta.error}>
-            <DatePicker 
+            <DatePicker
                 {...field}
                 {...props}
                 selected={(field.value && new Date(field.value)) || null}

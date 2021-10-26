@@ -1,11 +1,11 @@
 import axios from 'axios';
 import ValidationErrors from './ValidationErrors';
-import React, { Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Button, Header, Segment } from 'semantic-ui-react';
 
 function TestError() {
 
-    const baseUrl = 'http://localhost:5000/API/';
+    const baseUrl = process.env.REACT_APP_API_URL;
 
     const [errors, setErrors] = useState(null);
 
@@ -46,7 +46,7 @@ function TestError() {
                     <Button onClick={handleBadGuid} content='Bad Guid' basic primary />
                 </Button.Group>
             </Segment>
-            { errors &&  
+            {errors &&
                 <ValidationErrors errors={errors} />
             }
         </Fragment>
